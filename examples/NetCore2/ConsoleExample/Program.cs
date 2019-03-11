@@ -79,7 +79,7 @@ namespace ConsoleExample
             _logger.LogError(23, "Error!! {Action}", name);
             _logger.LogCritical(24, "Critical!!! {Action}", name);
 
-            throw new Exception("An exception!!!!");
+            // throw new Exception("An exception!!!!");
         }
     }
 }
