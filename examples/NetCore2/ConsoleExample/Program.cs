@@ -20,8 +20,8 @@ namespace ConsoleExample
                     var runner = servicesProvider.GetRequiredService<Runner>();
                     runner.DoAction("Action1");
 
-                    Console.WriteLine("Press ANY key to exit");
-                    Console.ReadKey();
+                    //Console.WriteLine("Press ANY key to exit");
+                    //Console.ReadKey();
                 }
             }
             catch (Exception ex)
@@ -34,6 +34,9 @@ namespace ConsoleExample
             {
                 // Ensure to flush and stop internal timers/threads before application-exit (Avoid segmentation fault on Linux)
                 LogManager.Shutdown();
+                // moved here so it appears after the log console output
+                Console.WriteLine("Press ANY key to exit");
+                Console.ReadKey();
             }
         }
 
