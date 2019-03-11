@@ -18,7 +18,7 @@ namespace ConsoleExample
                 using (servicesProvider as IDisposable)
                 {
                     var runner = servicesProvider.GetRequiredService<Runner>();
-                    runner.DoAction("Action1");
+                    runner.DoAction("A task");
 
                     Console.WriteLine("Press ANY key to exit");
                     Console.ReadKey();
@@ -28,7 +28,7 @@ namespace ConsoleExample
             {
                 // NLog: catch any exception and log it.
                 logger.Error(ex, "Stopped program because of exception");
-                throw;
+                //throw;
             }
             finally
             {
@@ -73,11 +73,13 @@ namespace ConsoleExample
 
         public void DoAction(string name)
         {
-            _logger.LogDebug(20, "Doing hard work! {Action}", name);
-            _logger.LogInformation(21, "Doing hard work! {Action}", name);
-            _logger.LogWarning(22, "Doing hard work! {Action}", name);
-            _logger.LogError(23, "Doing hard work! {Action}", name);
-            _logger.LogCritical(24, "Doing hard work! {Action}", name);
+            _logger.LogDebug(20, "Debugging! {Action}", name);
+            _logger.LogInformation(21, "Info: {Action}", name);
+            _logger.LogWarning(22, "Warning! {Action}", name);
+            _logger.LogError(23, "Error!! {Action}", name);
+            _logger.LogCritical(24, "Critical!!! {Action}", name);
+
+            throw new Exception("An exception!!!!");
         }
     }
 }
