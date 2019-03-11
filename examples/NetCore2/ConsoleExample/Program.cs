@@ -73,11 +73,11 @@ namespace ConsoleExample
 
         public void DoAction(string name)
         {
-            _logger.LogDebug(20, "Doing hard work! {Action}", name);
-            _logger.LogInformation(21, "Doing hard work! {Action}", name);
-            _logger.LogWarning(22, "Doing hard work! {Action}", name);
-            _logger.LogError(23, "Doing hard work! {Action}", name);
-            _logger.LogCritical(24, "Doing hard work! {Action}", name);
+            _logger.LogDebug(20, "LogDebug {Action}", name);
+            _logger.LogInformation(21, "LogInformation {Action}", name);
+            _logger.LogWarning(22, "LogWarning {Action}", name);
+            _logger.LogError(23, "LogError {Action}", name);
+            _logger.LogCritical(24, "LogCritical {Action}", name);
         }
     }
 }
